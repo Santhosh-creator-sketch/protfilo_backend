@@ -15,6 +15,9 @@ app.use("/uploads", express.static(path.join(__dirname, "uploads"))); // ✅ Ser
 const adminRoutes = require("./routes/adminRoutes");
 app.use("/api/admin", adminRoutes);
 
+const invoiceRoutes = require("./routes/invoiceRoutes");
+app.use("/api/invoices", invoiceRoutes);
+
 // 📌 MongoDB Connection
 mongoose.connect(process.env.MONGO_URI)
     .then(() => console.log('✅ MongoDB Connected'))
